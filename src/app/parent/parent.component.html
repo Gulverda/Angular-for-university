@@ -1,0 +1,36 @@
+<div>
+  <h1>{{ message }}</h1>  <!-- This will display "hello from parent" -->
+  <p>Class Name: {{ className }}</p> <!-- This will display "ParentComponent" -->
+</div>
+
+property binding
+
+Property binding is a one-way data binding from the component to the DOM. It is used to set the value of an HTML element property or attribute. The syntax for property binding is [property]="expression".
+
+In the example above, the message property of the ParentComponent class is bound to the h1 element in the parent.component.html file. The value of the message property is displayed in the h1 element.
+
+<p [className]="className">myTest</p>
+<input type="text" [value]="className">
+
+event binding
+
+Event binding is a one-way data binding from the DOM to the component. It is used to listen to events such as click, mouseover, keyup, etc., and trigger a function in the component when the event occurs. The syntax for event binding is (event)="expression".
+
+In the example above, the click event of the button element is bound to the onClick method of the ParentComponent class. When the button is clicked, the onClick method is called, and the message property is updated with the new value.
+
+<button (click)="showMessage()" [className]="className">Click me</button>
+
+<br>
+<br>
+two way binding
+
+Two-way data binding is a combination of property binding and event binding. It allows data to flow in both directions between the component and the DOM. The syntax for two-way data binding is [(ngModel)]="expression".
+
+In the example above, the ngModel directive is used to bind the input element to the message property of the ParentComponent class. When the input value changes, the message property is updated, and when the message property changes, the input value is updated.
+
+<br>
+<br>
+<input type="text" [(ngModel)]="message">
+<p>{{ message }}</p>
+
+<app-child [parentData]="childData"></app-child>
